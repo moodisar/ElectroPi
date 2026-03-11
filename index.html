@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroPi | Natural Hydration</title>
+  <style>
+    :root {
+      --orange: #f28c28;
+      --turquoise: #27c2c9;
+      --blue: #1496c9;
+      --yellow: #f6c445;
+      --dark: #12343b;
+      --light: #f8fcfc;
+      --white: #ffffff;
+      --gray: #5f6b6d;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fcfc 0%, #eefafa 100%);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(18, 52, 59, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--yellow), var(--turquoise));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--dark);
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--turquoise);
+      color: var(--turquoise);
+      background: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: #eafcfc;
+    }
+
+    .hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .hero-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-text {
+      color: var(--gray);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .feature-card img {
+      width: 70px;
+      margin: 0 auto 0.8rem auto;
+    }
+
+    .flavors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .flavor-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .flavor-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .flavor-card h3 {
+      padding: 1rem;
+    }
+
+    .flavor-card p {
+      padding: 0 1rem 1rem 1rem;
+      color: var(--gray);
+    }
+
+    footer {
+      margin-top: 4rem;
+      background: var(--dark);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">E</span>
+        <span>ElectroPi</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#flavors">Flavors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Natural hydration with <span>ElectroPi</span></h1>
+          <p>
+            ElectroPi is a Dominican startup creating natural electrolyte drinks made with coconut water and real fruit flavors. We offer a healthier alternative to sugary and artificial beverages, designed for daily hydration in a hot tropical climate.
+          </p>
+          <div class="hero-buttons">
+            <a href="#flavors" class="btn btn-primary">Explore Flavors</a>
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
+          <div class="hero-tags">
+            <span class="tag">Natural Coconut Water</span>
+            <span class="tag">No Artificial Colors</span>
+            <span class="tag">No Added Refined Sugar</span>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=80" alt="Fresh coconuts and natural tropical hydration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About ElectroPi</h2>
+        <p class="section-text">
+          ElectroPi was created to respond to the growing consumption of sugary and artificial drinks in the Dominican Republic. By using coconut water and tropical fruit flavors, our brand supports healthier hydration while also promoting local ingredients and agriculture.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="benefits">
+      <div class="container">
+        <h2 class="section-title">Why Choose ElectroPi?</h2>
+        <p class="section-text">
+          Our drink is designed for students, athletes, and anyone who wants a refreshing and healthier hydration option.
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Coconut icon" />
+            <h3>Natural Ingredients</h3>
+            <p>Made with real coconut water and fruit flavors for a cleaner, more natural drink.</p>
+          </div>
+          <div class="feature-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="Hydration icon" />
+            <h3>Healthy Hydration</h3>
+            <p>Contains natural electrolytes like potassium and sodium to support hydration and energy.</p>
+          </div>
+          <div class="feature-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="No sugar icon" />
+            <h3>Better Choice</h3>
+            <p>No artificial colors and no added refined sugar, making it a smarter everyday option.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flavors">
+      <div class="container">
+        <h2 class="section-title">Our Flavors</h2>
+        <p class="section-text">
+          ElectroPi currently offers three tropical flavors blended with coconut water.
+        </p>
+        <div class="flavors-grid">
+          <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=900&q=80" alt="Pineapple flavor" />
+            <h3>Pineapple + Coconut Water</h3>
+            <p>A tropical flavor that is naturally sweet, energizing, and refreshing.</p>
+          </div>
+          <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=80" alt="Strawberry flavor" />
+            <h3>Strawberry + Coconut Water</h3>
+            <p>A smooth fruity flavor with balanced sweetness and a fresh tropical feel.</p>
+          </div>
+          <div class="flavor-card">
+            <img src="https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?auto=format&fit=crop&w=900&q=80" alt="Lime flavor" />
+            <h3>Lime + Coconut Water</h3>
+            <p>A light citrus option that is crisp, cooling, and perfect for hot weather.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <p><strong>ElectroPi</strong> | Natural Hydration for Everyday Life</p>
+      <p>Email: info@electropi.com | Phone: +1 (809) 555-1234</p>
+    </div>
+  </footer>
+</body>
+</html>
